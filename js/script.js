@@ -8,7 +8,11 @@ function blockNote() {
         $('.note-line').append('<div></div>');
     }
     $('.note-line>div').hover(function () {
-        $(this).css('background', 'blue');
+        var r = Math.floor(Math.random() * (256));
+        var g = Math.floor(Math.random() * (256));
+        var b = Math.floor(Math.random() * (256));
+        var randomcolor = 'rgb(' + r + ',' + g + ',' + b + ')';
+        $(this).css('background', randomcolor);
     });
     $('#reset').click(function () {
         $('.setting-container').css('height', '100%', 'overflow', 'none');
@@ -27,7 +31,11 @@ function blockNote() {
             $('.note-line').append('<div></div>');
         }
         $('.note-line>div').hover(function () {
-            $(this).css('background', 'blue');
+            var r = Math.floor(Math.random() * (256));
+            var g = Math.floor(Math.random() * (256));
+            var b = Math.floor(Math.random() * (256));
+            var randomcolor = 'rgb(' + r + ',' + g + ',' + b + ')';
+            $(this).css('background', randomcolor);
         });
     });
 }
