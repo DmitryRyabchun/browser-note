@@ -4,24 +4,19 @@ $(document).ready(function () {
         for (var i = 0; i < height; i++) {
             $('.note').append('<div class = "note-line"></div>');
         }
-        for (var j = 0; j < width; j++) {
+        for (i = 0; i < width; i++) {
             $('.note-line').append('<div></div>');
         }
     }
 
     function randomColor() {
         $('.note-line>div').hover(function () {
-            var r = Math.floor(Math.random() * (256));
-            var g = Math.floor(Math.random() * (256));
-            var b = Math.floor(Math.random() * (256));
-            var randomcolor = 'rgb(' + r + ',' + g + ',' + b + ')';
+            var randomcolor = '#'+((1<<24)*Math.random()|0).toString(16);
             $(this).css('background', randomcolor);
         });
     }
 
-    var width = 16,
-        height = 16;
-    createField(width, height);
+    createField(16, 16);
     randomColor();
     $('#reset').click(function () {
         $('.setting-container').css('height', '100%', 'overflow', 'none');
@@ -31,7 +26,7 @@ $(document).ready(function () {
         $('.note-line>div').css('background-color', 'red');
         $('.note-line>div').remove();
         $('.note-line').remove();
-        width = document.size.size_width.value,
+        var width = document.size.size_width.value,
             height = document.size.size_height.value;
         createField(width, height);
         randomColor();
